@@ -3,8 +3,6 @@ import { load } from "../lib/dotenv.ts";
 
 await load({ export: true });
 const config = Deno.env.toObject()
-console.log(config);
-
 
 const conector = new denodb.MongoDBConnector({
   uri: config.MONGO_URI,
