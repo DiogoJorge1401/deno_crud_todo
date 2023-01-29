@@ -1,0 +1,1 @@
+deno run --watch -A src/app.ts
