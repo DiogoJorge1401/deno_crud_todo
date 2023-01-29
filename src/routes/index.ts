@@ -12,13 +12,13 @@ const addTodoController = new AddTodoController();
 const getTodosController = new GetTodosController();
 const getTodoController = new GetTodoController();
 const updateTodoController = new UpdateTodoController();
-const deleteTodoController = new DeleteTodoController()
+const deleteTodoController = new DeleteTodoController();
 
 router
   .post("/api/todos", noEmptyBody, addTodoController.handle) // Add a todo
   .get("/api/todos", getTodosController.handle) // Get all todos
   .get("/api/todos/:id", getTodoController.handle) // Get all todos
   .put("/api/todos/:id", noEmptyBody, updateTodoController.handle) // Update a todo
-  .delete("/api/todos/:id", deleteTodoController.handle) // Delete a todo
+  .delete("/api/todos/:id", deleteTodoController.handle); // Delete a todo
 
 export { router };

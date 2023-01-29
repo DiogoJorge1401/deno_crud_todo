@@ -1,13 +1,7 @@
-import { oak } from "../lib/oak.ts";
+import { RequestHandler } from "../interfaces/RequestHandler.ts";
 
 export const noEmptyBody = async (
-  {
-    request,
-    response,
-  }: {
-    request: oak.Request;
-    response: oak.Response;
-  },
+  { request, response }: RequestHandler,
   next: () => Promise<unknown>,
 ) => {
   try {

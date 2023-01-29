@@ -1,4 +1,3 @@
-// deno-lint-ignore-file
 import { RequestHandler } from "../../interfaces/RequestHandler.ts";
 import { GetTodosUseCase } from "./GetTodosUseCase.ts";
 
@@ -8,8 +7,6 @@ export class GetTodosController {
       const completeQueryValue = request.url.searchParams.get(
         "complete",
       ) === "true";
-
-      console.log(completeQueryValue);
 
       const getTodosUseCase = new GetTodosUseCase();
 
