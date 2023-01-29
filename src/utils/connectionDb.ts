@@ -2,9 +2,12 @@ import { denodb } from "../lib/denodb.ts";
 import { load } from "../lib/dotenv.ts";
 
 await load({ export: true });
+const config = Deno.env.toObject()
+console.log(config);
+
 
 const conector = new denodb.MongoDBConnector({
-  uri: Deno.env.get("MONGO_URI")!,
+  uri: config.MONGO_URI,
   database: "todo_db",
 });
 
